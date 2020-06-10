@@ -1,13 +1,19 @@
 # Add  code here!
 
-def primetest
-  if Prime.prime?(@nth_value)
-   puts ("#{@nth_value} is prime")
+class DetermineIfPrime
+def initialize (nth_value)
+@nth_value = nth_value
+primetest
+end
+
+ def primetest
+ for test_value in [2, 3, 5, 7, 9, 11, 13] do
+  if (@nth_value % test_value) == 0
+   puts ("#{@nth_value} is not divisible by #{test_value}")
   else
-   puts ("This is not a prime number.")
+   puts ("This is not a prime number since this is divisible by #{test_value}")
+  break
   end
-rescue Exception
-puts ("#{$!.class}")
-puts ("#{$!}")
+ end
  end
 end
