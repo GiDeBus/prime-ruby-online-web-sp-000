@@ -1,11 +1,10 @@
 # Add  code here!
 
 def prime?(n)
-  2.upto(Math.sqrt(n)) do |x| 
-    if n % x == 0
-      return false
-    else
-      return true
-    end 
-  end
+  return true if n == 2
+  return false if n % 2 == 0 || n < 2
+  (3..(n**0.5).floor).step(2) { |i|
+    return false if n % i == 0
+  }
+  true
 end
